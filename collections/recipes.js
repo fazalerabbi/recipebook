@@ -4,8 +4,8 @@ Recipes.allow({
   insert: function(userId, doc){
     return !!userId;
   },
-  update: function(){
-    return true;
+  update: function(userId, doc){
+    return !!userId;
   },
   remove: function(){
     return true;
@@ -64,4 +64,12 @@ recipesSchema = new SimpleSchema({
   }
 });
 
+Meteor.methods({
+  toggleMenuItem:function(id, currentState){
+     Recipes.update({_id:id}, {$set:{
+        in_menu: !currentState
+     }});
+
+  }
+});
 Recipes.attachSchema( recipesSchema );
