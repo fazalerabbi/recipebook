@@ -13,10 +13,12 @@
     </p>
     <a href="/recipe/{{_id}}">View Details</a>
     {{#if in_menu}}
-    <button class="btn-deny toggle-menu">Remove From Menu</button>
+      <button class="btn-deny toggle-menu">Remove From Menu</button>
     {{else}}
-    <button class="btn-primary toggle-menu">Add to Menu</button>
+      <button class="btn-primary toggle-menu">Add to Menu</button>
     {{/if}}
+
+    {{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=this autosave=true}}
   </article>
 
 </template>

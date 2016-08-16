@@ -1,5 +1,8 @@
 
 Template.recipe.helpers({
+  updateRecipeId: function(){
+    return this._id;
+  },
   create: function(){
 
   },
