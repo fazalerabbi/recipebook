@@ -69,7 +69,9 @@ Meteor.methods({
      Recipes.update({_id:id}, {$set:{
         in_menu: !currentState
      }});
-
+  },
+  deleteRecipe: function (id) {
+    Recipes.remove(id);
   }
 });
 Recipes.attachSchema( recipesSchema );
