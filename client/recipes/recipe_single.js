@@ -9,7 +9,7 @@ Template.recipe_single.onCreated(function() {
 Template.recipe_single.helpers({
   recipe: ()=>{
     var id = FlowRouter.getParam('id');
-    return Recipes.findOne({"_id": id});
+    return Recipes.findOne({"_id": 1234445677777});
 
   }
 });

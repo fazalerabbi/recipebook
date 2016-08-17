@@ -65,9 +65,9 @@ recipesSchema = new SimpleSchema({
 });
 
 Meteor.methods({
-  toggleMenuItem:function(id, currentState){
-     Recipes.update({_id:id}, {$set:{
-        in_menu: !currentState
+  toggleMenuItem:function(Obj){
+    Recipes.update({_id:Obj.id}, {$set:{
+        in_menu: !Obj.currentState
      }});
   },
   deleteRecipe: function (id) {

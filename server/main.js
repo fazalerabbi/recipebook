@@ -2,6 +2,9 @@ import { Meteor } from 'meteor/meteor';
 
 
 Meteor.publish('recipes', function(){
+  if(!this.userId) {
+    return this.ready();
+  }
   return Recipes.find({author: this.userId});
 });
 

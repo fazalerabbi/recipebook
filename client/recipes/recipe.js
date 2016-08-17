@@ -18,8 +18,12 @@ Template.recipe.helpers({
 
 Template.recipe.events({
   'click .toggle-menu': function(event, template){
-    console.log("hello");
-    Meteor.call('toggleMenuItem', this._id,this.in_menu);
+    Meteor.call('toggleMenuItem', {
+      id:this._id,
+      currentState:this.in_menu
+    },function(err, res){
+      console.log(err, res);
+    });
   },
 
   'click .fa-trash': function () {
